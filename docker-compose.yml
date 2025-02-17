@@ -1,0 +1,27 @@
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: backend_app
+    volumes:
+      - .:/workspace
+    ports:
+      - "9000:9000"
+      - "8000:8000"
+    working_dir: /workspace/backend/src
+    stdin_open: true
+    tty: true
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: frontend_app
+    volumes:
+      - .:/workspace
+    ports:
+      - "3000:3000"
+    working_dir: /workspace/frontend/src
+    stdin_open: true
+    tty: true

@@ -1,0 +1,9 @@
+{
+  "name": "Fullstack Dev Container",
+  "dockerComposeFile": [
+    "../docker-compose.yml"
+  ],
+  "service": "backend",
+  "workspaceFolder": "/workspace",
+  "remoteUser": "root"
+}
