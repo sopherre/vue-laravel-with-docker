@@ -2,6 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return "Success Health Check!!";
+Route::get('/api/health', function () {
+    return response()->json(["message" => "Success Health Check"]);
 });

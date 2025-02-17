@@ -3,7 +3,8 @@
   "dockerComposeFile": [
     "../docker-compose.yml"
   ],
-  "service": "backend",
+  "service": "common",
   "workspaceFolder": "/workspace",
-  "remoteUser": "root"
+  "remoteUser": "root",
+  "postCreateCommand": "composer --version && node -v && npm -v && cd backend && php artisan key:generate"
 }
