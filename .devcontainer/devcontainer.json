@@ -6,5 +6,5 @@
   "service": "common",
   "workspaceFolder": "/workspace",
   "remoteUser": "root",
-  "postCreateCommand": "composer --version && node -v && npm -v && cd backend && php artisan key:generate"
+  "postCreateCommand": "composer --version && node -v && npm -v && cd backend && php artisan key:generate && cd ../ && bash -c 'sh .devcontainer/setup.sh'"
 }

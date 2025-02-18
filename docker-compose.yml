@@ -9,6 +9,8 @@ services:
       - ./.devcontainer/nginx.conf:/etc/nginx/nginx.conf
       - ./frontend:/workspace/frontend
       - ./backend:/workspace/backend
+      - ~/.ssh:/root/.ssh:ro # ホストの~/.sshディレクトリをコンテナの/root/.sshに読み取り専用でマウント
+      - ~/.gitconfig:/root/.gitconfig:ro # ホストの~/.gitconfigをコンテナに読み取り専用でマウント
     working_dir: /workspace
     stdin_open: true
     tty: true
