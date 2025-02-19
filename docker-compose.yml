@@ -21,7 +21,7 @@ services:
     command: >
       sh -c "
       service nginx start;
-      cd backend && php artisan serve --host=0.0.0.0 --port=8000 & 
-      cd frontend && npm run build && npm run dev &
+      cd backend && composer install --no-dev --optimize-autoloader && php artisan serve --host=0.0.0.0 --port=8000 & 
+      cd frontend && npm install && npm run build && npm run dev &
       wait
       "
