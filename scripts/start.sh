@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# 現在のワークスペースフォルダ名を取得
+WORKSPACE_NAME=$(basename "$PWD")
+
 # Viewアプリのパッケージインストール
 pnpm -C view install
 
@@ -17,6 +20,7 @@ php api/artisan serve --host=0.0.0.0 --port=8000 &
 
 # Nginx をホスト側の設定ファイルで起動
 echo "🔄 Starting Nginx with custom configuration..."
-nginx -c /workspaces/vue-laravel/.devcontainer/nginx/default.conf
+NGINX_CONF_PATH="/workspaces/$WORKSPACE_NAME/.devcontainer/nginx/default.conf"
+nginx -c "$NGINX_CONF_PATH"
 
 echo "✅ Nginx setup completed!"
