@@ -1,19 +1,26 @@
 {
-  "name": "Fullstack Dev Container",
-  "dockerComposeFile": [
-    "../docker-compose.yml"
+  "name": "Vue Laravel Development Environment",
+  //  OS
+  "image": "ubuntu:24.04",
+  //  コンテナ名の指定
+  "runArgs": [
+    "--name",
+    "vue-laravel-development",
+    "-p",
+    "8080:80"
   ],
-  "service": "common",
-  "workspaceFolder": "/workspace",
-  "remoteUser": "root",
-  "postCreateCommand": "composer --version && node -v && npm -v && cd backend && php artisan key:generate && cd ../ && bash -c 'sh .devcontainer/setup.sh'",
+  "features": {},
   "customizations": {
     "vscode": {
       "extensions": [
-        "vue.volar",
-        "ms-azuretools.vscode-docker",
-        "bmewburn.vscode-intelephense-client"
+        "Vue.volar",
+        "dbaeumer.vscode-eslint",
+        "EditorConfig.EditorConfig",
+        "esbenp.prettier-vscode"
       ]
     }
-  }
+  },
+  "remoteUser": "root",
+  "workspaceFolder": "/workspaces/vue-laravel",
+  "postCreateCommand": "sh .devcontainer/setup.sh"
 }

@@ -1,0 +1,7 @@
+# 共通
+.pnpm-store
+.devcontainer/**/*.log
+
+# view
+/view/node_modules
+/view/.vscode
